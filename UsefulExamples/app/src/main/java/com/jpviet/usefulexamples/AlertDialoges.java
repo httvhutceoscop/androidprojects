@@ -7,6 +7,8 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Toast;
 
+import com.jpviet.alltherecipes.R;
+
 /**
  * Created by nguyen.tien.viet on 2/27/2017.
  */

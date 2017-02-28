@@ -12,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.jpviet.alltherecipes.R;
+
 public class MainActivity extends AppCompatActivity {
 
     String[] aExamples = {"Alert Dialoges",
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     };
     String LOG_MESSENGER = "LOG_MESSENGER";
     final Context context = this;
+    private ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,15 +85,15 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 R.layout.activity_listview, aExamples);
 
-        final ListView listView = (ListView) findViewById(R.id.list_examples);
-        listView.setAdapter(adapter);
+        mListView = (ListView) findViewById(R.id.list_examples);
+        mListView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 // ListView Clicked item value
-                String  itemValue    = (String) listView.getItemAtPosition(position);
+                String  itemValue    = (String) mListView.getItemAtPosition(position);
                 Toast.makeText(MainActivity.this, "postition: " + position + " - itemValue: " + itemValue,
                         Toast.LENGTH_SHORT).show();
                 Log.d(LOG_MESSENGER, "postition: " + position + " - itemValue: " + itemValue);
