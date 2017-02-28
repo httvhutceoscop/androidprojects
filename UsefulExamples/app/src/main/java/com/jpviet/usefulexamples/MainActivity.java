@@ -94,9 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // ListView Clicked item value
                 String  itemValue    = (String) mListView.getItemAtPosition(position);
-                Toast.makeText(MainActivity.this, "postition: " + position + " - itemValue: " + itemValue,
-                        Toast.LENGTH_SHORT).show();
-                Log.d(LOG_MESSENGER, "postition: " + position + " - itemValue: " + itemValue);
+
                 Intent detailIntent = new Intent(context, AlertDialoges.class);
                 startActivity(detailIntent);
             }
